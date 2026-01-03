@@ -1,16 +1,32 @@
-import express from "express";
-import cors from "cors"
-import dotenv from "dotenv";
+//http routing k leya
+import { express } from "express";
 
-dotenv.config();
+//jwt imoprt  jsonwebtoken k leya
+import { Jwt } from "jsonwebtoken";
+//jwt secret key verufy k leya
+import { JWT_SECRET } from '@repo/backend-common/config';
 
-const app = express();
-app.use(cors());
+import { middleware } from "./middleware";
+//zod schema se validate sigin function 
+
+
+//prims client datbase oirnetation
+import {prismaClient }
+
+import bcrypt from "bcrypt";
+import cors from 'cors';
+
+
+//app inistalise
+const app=express();
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("HTTP Backend running 🚀");
-});
+app.use(cors());
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+//radnom room code generate krne ke lya
+
+
+
+
+
