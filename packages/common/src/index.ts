@@ -1,4 +1,5 @@
 import {z} from "zod";
+//zod validation is defien in this file
 export const CreateUserSchema=z.object({
     username:z.string().min(3).max(20).optional(),
     password:z.string(),
